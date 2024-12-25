@@ -38,4 +38,6 @@ export default function Show({ product }) {
                 </div>
             </div>
     );
+
+    
 }
