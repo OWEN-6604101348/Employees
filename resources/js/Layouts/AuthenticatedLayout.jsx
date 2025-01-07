@@ -31,19 +31,18 @@ export default function AuthenticatedLayout({ header, children }) {
                                     Dashboard
                                 </NavLink>
                                 <NavLink
-                                    href={route('chirps.index')}
-                                    active={route().current('chirps.index')}
+                                    href={route('employee.index')}
+                                    active={route().current('employee.index')}
                                 >
-                                    Chirps
+                                    Employees
                                 </NavLink>
                                 <NavLink
-                                    href={route('products.index')}
-                                    active={route().current('products.index')}
+                                    href={route('employee.create')}
+                                    active={route().current('employee.create')}
                                 >
-                                    Product
+                                    Creaet Employees
                                 </NavLink>
                             </div>
-
                         </div>
 
                         <div className="hidden sm:ms-6 sm:flex sm:items-center">
@@ -148,19 +147,18 @@ export default function AuthenticatedLayout({ header, children }) {
                             Dashboard
                         </ResponsiveNavLink>
                         <ResponsiveNavLink
-                            href={route('chirps.index')}
-                            active={route().current('chirps.index')}
+                            href={route('employee.index')}
+                            active={route().current('employee.index')}
                         >
-                            Chirps
+                            Employees
                         </ResponsiveNavLink>
                         <ResponsiveNavLink
-                            href={route('products.index')}
-                            active={route().current('products.index')}
+                            href={route('employee.create')}
+                            active={route().current('employee.create')}
                         >
-                            Product
+                            Creaet Employees
                         </ResponsiveNavLink>
                     </div>
-
 
                     <div className="border-t border-gray-200 pb-1 pt-4">
                         <div className="px-4">

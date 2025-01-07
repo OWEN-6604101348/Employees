@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { router } from '@inertiajs/react';
+import AuthenticatedLayout from '@/Layouts/AuthenticatedLayout';
 
 export default function Index({ employees, query }) {
     const [search, setSearch] = useState(query || '');
@@ -11,7 +12,7 @@ export default function Index({ employees, query }) {
 
     const fetchEmployees = (params) => {
         setIsLoading(true);
-        router.get('/employees', params, {
+        router.get('/employee', params, {
             replace: true,
             preserveState: true,
             onFinish: () => setIsLoading(false),
@@ -47,6 +48,7 @@ export default function Index({ employees, query }) {
     };
 
     return (
+        <AuthenticatedLayout>
         <div className="container mx-auto p-8 bg-gradient-to-r from-blue-50 via-white to-blue-50 shadow-lg rounded-lg">
             <h1 className="text-4xl font-extrabold text-center mb-8 text-blue-700 tracking-wide">
                 รายชื่อเเรงงาน ร้านขายเเมลง
@@ -140,6 +142,7 @@ export default function Index({ employees, query }) {
                 <p className="text-center text-red-500 font-semibold mt-8">No data found</p>
             )}
         </div>
+        </AuthenticatedLayout>
     );
 }
 

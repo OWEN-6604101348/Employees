@@ -13,10 +13,10 @@ use Illuminate\Support\Facades\Route;
 // นำเข้า Inertia สำหรับการเรนเดอร์หน้าเว็บ
 use Inertia\Inertia;
 
-Route::get('/employees', [EmployeeController::class, 'index']); 
+Route::get('/employee', [EmployeeController::class, 'index'])->name('employee.index'); 
 
-Route::get('/employees/create', [ProfileController::class,'create'])->name('employee.create');
-Route::post('/employeess', [ProfileController::class,'store'])->name('employee.store');
+Route::get('/employee/create', [EmployeeController::class, 'create'])->name('employee.create');
+Route::post('/employee', [EmployeeController::class, 'store'])->name('employee.store');
 
 
 // เส้นทางหลักของเว็บไซต์ที่แสดงหน้าต้อนรับ
