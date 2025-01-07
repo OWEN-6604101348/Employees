@@ -58,36 +58,4 @@ class EmployeeController extends Controller
         return redirect()->route('employees.index')->with('success', 'Employee created successfully.');
     }
 
-    public function show(Employee $employee)
-    {
-        return Inertia::render('Employees/Show', [
-            'employee' => $employee,
-        ]);
-    }
-
-    public function edit(Employee $employee)
-    {
-        return Inertia::render('Employees/Edit', [
-            'employee' => $employee,
-        ]);
-    }
-
-    public function update(Request $request, Employee $employee)
-    {
-        $validated = $request->validate([
-            'emp_no' => 'required|max:10',
-            'first_name' => 'required|max:50',
-        ]);
-
-        $employee->update($validated);
-
-        return redirect()->route('employees.index')->with('success', 'Employee updated successfully.');
-    }
-
-    public function destroy(Employee $employee)
-    {
-        $employee->delete();
-
-        return redirect()->route('employees.index')->with('success', 'Employee deleted successfully.');
-    }
 }

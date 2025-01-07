@@ -14,9 +14,9 @@ use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
 
 Route::get('/employees', [EmployeeController::class, 'index']); 
-Route::get('/products/{id}', [ProductController::class, 'show'])->middleware('auth')->name('products.show');
 
-Route::get('/products', [ProductController::class, 'index'])->name('products.index');
+Route::get('/employees/create', [ProfileController::class,'create'])->name('employee.create');
+Route::post('/employeess', [ProfileController::class,'store'])->name('employee.store');
 
 
 // เส้นทางหลักของเว็บไซต์ที่แสดงหน้าต้อนรับ
@@ -46,9 +46,6 @@ Route::middleware('auth')->group(function () {
 });
 
 // กลุ่มเส้นทางสำหรับการจัดการ Chirp โดยใช้ resource controller
-Route::resource('chirps', ChirpController::class)
-    ->only(['index', 'store', 'update', 'destroy']) // จำกัดการใช้เมธอดที่เลือกเท่านั้น
-    ->middleware(['auth', 'verified']); // ต้องการการยืนยันตัวตนและอีเมลสำหรับการเข้าถึง
 
 // รวมเส้นทางที่เกี่ยวข้องกับการเข้าสู่ระบบและการยืนยันอีเมล
 require __DIR__.'/auth.php';
