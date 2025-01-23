@@ -191,5 +191,6 @@ export default function Create({ departments }) {
                 </form>
             </div>
         </AuthenticatedLayout>
+        
     );
 };
